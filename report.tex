@@ -1,0 +1,121 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{blindtext, graphicx}
+\usepackage{listings}
+\lstset { 
+    language=C++,
+    numbers=left,
+    breaklines=true,
+    xleftmargin=4em,
+    resetmargins=true,
+    basicstyle=\footnotesize,
+    numberstyle=\footnotesize,
+}
+\usepackage{graphicx}
+\usepackage[font=small]{caption}
+
+
+\usepackage[utf8]{inputenc}
+\title{Different Disease Detection in Cotton Leaf from Images taken in ungoverned environment}
+
+\author{
+\IEEEauthorblockN{Honey Gadhiya, Ishika Agarwal, 
+Nivedita Rao, Pooja Langhnoda }
+
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+\section{Abstract}
+The primary purpose of the project is to identify whether a particular cotton leaf is diseased or not. Further if it is diseased, identification of the disease is done. We have considered three main diseases - Alternaria Macrospora, Bacterial Blight and Grey Mildew. We are using Multi-SVM classification algorithm, to identify among different classes. The training data taken are images uploaded on web by ordinary humans. Assuming that the images are taken in uncontrolled environment, many difficulties are faced, making the machine-learning algorithm less effective. Therefore, some pre-processing (clustering, segmentation, etc.) is done to improve the quality of learning. We have used various statistical features (mean, Standard deviation, variance etc.) as training features for our algorithm. 
+
+\bigskip
+\section{Introduction}
+In Developing countries like India, the economy is greatly dependent on agriculture. The quality and quantity of agricultural product is reduced because of plant disease.The naked eye observation of experts is the first approach for detection and identification of plant diseases. But, this requires constant monitoring of experts which might be expensive in large farms. And also farmers will have to go long to contact experts, this is time consuming and expensive for farmers. Therefore, automatic detection of plant diseases is an important topic to work upon, as it will reduce the farmer’s work and will increase the quality and quantity of agricultural products.
+
+\bigskip
+	Cotton is “The White Gold” among all cash crops in India.It provides rich income to millions of farmers.There are various types of cotton leaf diseases such as Alternaria Macrospora,Bacterial Blight,Grey Mildew,Rust,Leaf Curl virus disease etc.So, here we are detecting some of these diseases form images.This detection is done with the images of diseased plants.We have to first identify the leaf and then diseased part from the image.There are many ways to extract the diseased part, like extracting the color, shape,texture, edge detection ,taking histogram etc. Then, there are different classification techniques such as Support Vector Machine(SVM),Artificial Neural Network(ANN), Deep Neural Network (deep learning), Principal Component Analysis(PCA), K-means clustering,Otsu Segmentation etc. With these techniques and training data, we train the machine to identify the diseases from given image of cotton leaf.
+
+\bigskip
+\bigskip
+\section{Literature Review}
+\textbf{Aditya Parikh, Mehul S. Raval, et al.}[1]  describes the approach to detect disease and identify its stage of cotton plant.In cotton, diseases in leaf are critical issue because it reduces the production of cotton. The region of interest is leaf because in cotton plant, most of diseases occur in leaf only.The identification is done from unconstrained images of cotton leaf.The detection is done after some pre-processing is done on images.The algorithm implemented for detection can be used for any specific disease.   
+
+\vspace{3mm}
+
+\textbf{Shayan Hati,Sajeevan G}[2] describes how Artificial Neural Network is used to identify plant by inputting leaf image. Compared to earlier approaches, new input features and image processing approach that matter in efficient classification in Artificial Neural Network have been introduced. Image processing techniques are used to extract leaf shape features .These extracted features are used as inputs to neural network for classifying the plants.
+
+\vspace{3mm}
+
+\textbf{V. R. Patil,R. R. Manza}[3] describes how features are extracted from leaf images by various image processing techniques.Then digital morphometric feature extraction is discussed.The there are some experimental results of some techniques implemented.
+
+\vspace{3mm}
+
+\textbf{Xiaodong Zheng,Xiaojie Wang}[4] describes how leaf features play an important role in plant species and plant identification like leaf vein is an important morphological feature of leaf.The gray-scale morphology processing is applied to the image to eliminate the color overlap in the whole leaf vein and the whole background. Then linear intensity adjustment is adopted to enlarge the gray value difference between the leaf vein and its background. Calculate a threshold with OSTU method to segment the leaf vein from its background. Finally, the leaf vein can be got after some processing on details.
+
+\vspace{3mm}
+
+\textbf{Sushma S. Patil,Mr. Suhas K. C}[5] describes the symptoms of some cotton leaf diseases and then an algorithm is proposed to detect different diseases using Support Vector Machine(SVM). This algorithm contains some of image processing steps such as resizing, converting RGB to grayscale,detecting edges of spots,segmentation,features extraction and then SVM is applied to trained dataset.  
+
+
+\bigskip
+\bigskip
+
+\section{Result}
+ We have collected a equally distributed database of 115 images for our project. But for now, on working upon database of 45-50 images, having proper background, texture and other things, and applying multi-SVM algorithm, we are getting correct identification of disease for up to 80\% training data set. Applying same algorithm on larger database reduces efficiency very much, and so lot of pre-processing and algorithm improvement has to be done. Applying neural networks algorithm and other pre-processing techniques will be our next step to work upon.
+
+
+\section{Discussion}
+
+Basically, first we are doing clustering for each and every image, to identify the region of interest(ROI). After manually selecting one cluster among three options, we are extracting feature values (for now, 13 training features are considered), and storing it in an excel sheet. Thus, making a 2-dimensional array of size 48x13. Then, a new diseased/healthy leaf image is given in algorithm, and then it gives the output as label, depicting the type of disease. But, we are facing many problems because of unconstrained images. 
+
+\vspace{3mm}
+
+Firstly, distinguishing between two similar diseases like alternaria macrospora and bacterial blight, which shows similar symptoms of brown spots. The difference is their spread pattern, one has diseased brown area across veins, while other has multiple small spots. Third disease, namely grey mildew is quite different because it has white colour spots for diseased section. So, to have distinguished classification between these two diseases is a challenge.
+
+\vspace{3mm}
+
+Secondly, there are some problems in the database itself like - background colour similar to diseased part colour, human hand in the image, contrast or brightness of images, resolution, shape etc. To assure our algorithm to work despite these difficulties, is another challenge.
+ 
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\section*{REFERENCES}
+[1] Aditya Parikh, Mehul S. Raval,Chandrasinh Parmar and Sanjay Chaudhary Disease Detection and Severity Estimation in Cotton Plant from Unconstrained Images In IEEE International Conference on Data Science and Advanced Analytics (DSAA),IEEE, 2016.
+
+\vspace{5mm}
+
+[2] Shayan Hati,Sajeevan G Plant Recognition from Leaf Image through Artificial
+Neural Network In International Journal of Computer Applications (0975 – 8887)
+Volume 62– No.17, January 2013.
+
+\vspace{5mm}
+
+[3] V. R. Patil,R. R. Manza A Method of Feature Extraction from Leaf Architecture In International Journal of Advanced Research in
+Computer Science and Software Engineering 2015
+
+\vspace{5mm}
+
+[4] Xiaodong Zheng,Xiaojie Wang. Leaf Vein Extraction Based on Gray-scale Morphology In MECS, December 2010.
+
+\vspace{5mm}
+
+[5] Sushma S. Patil,Mr. Suhas K. CIdentification and Classification of Cotton Leaf Spot Diseases using SVM Classifier In International Journal of Engineering Research \& Technology (IJERT) April 2014.
+
+
+\addtolength{\textheight}{-12cm}  
+
+\end{document}
